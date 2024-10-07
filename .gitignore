@@ -1,35 +1,26 @@
-# Ignore generated files
-*.log
-*.tmp
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
 
-# Ignore build directories
-/build/
-/dist/
-/output/
+# testing
+/coverage
 
-# Ignore dependency directories
-/node_modules/
-/vendor/
+# production
+/build
 
-# Ignore IDE and editor files
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Ignore OS-specific files
+# misc
 .DS_Store
-Thumbs.db
+*.pem
 
-# Ignore environment files
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
 .env
-.env.local
 
-# Ignore backup files
-*.bak
-*~
-
-
-# Ignore package manager files
-package-lock.json
-yarn.lock
+# azion
+.edge
+.vulcan

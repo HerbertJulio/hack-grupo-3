@@ -1,5 +1,5 @@
 #### Teste básico de requisição ao endpoint de chat
-POST http://localhost:3000/chat
+POST http://localhost:3333/ai
 Content-Type: application/json
 
 {

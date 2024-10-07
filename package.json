@@ -2,28 +2,23 @@
   "name": "task-terminators",
   "version": "1.0.0",
   "description": "API para hackathon que responde a prompts com dados de banco de dados e integração com OpenAI.",
-  "main": "index.js",
+  "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js",
-    "bundle": "webpack",
-    "dev": "nodemon src/index.js"
+    "build": "npx edge-functions@latest build",
+    "dev": "npx edge-functions@latest dev"
   },
   "keywords": [],
   "author": "HerbertCotta",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.7.7",
-    "azion": "^1.8.2",
+    "azion": "latest",
     "dotenv": "^16.4.5",
-    "express": "^4.21.0"
+    "hono": "^4.5.3",
+    "openai": "^4.67.2"
   },
   "devDependencies": {
-    "esbuild": "^0.24.0",
-    "esbuild-loader": "^4.2.2",
-    "nodemon": "^3.1.7",
-    "terser-webpack-plugin": "^5.3.10",
-    "webpack": "^5.95.0",
-    "webpack-cli": "^5.1.4"
+    "edge-functions": "^4.1.0",
+    "typescript": "^5.4.2"
   }
 }

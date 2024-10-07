@@ -1,0 +1,32 @@
+#### Teste básico de requisição ao endpoint de chat
+POST http://localhost:3000/chat
+Content-Type: application/json
+
+{
+  "prompt": "top 5 client that had the biggest traffic raise from the last 3 months"
+}
+
+### Query list of databases in Azion Edge SQL
+GET https://api.azion.com/v4/edge_sql/databases
+Authorization: Bearer TOKEN
+Content-Type: application/json
+
+### Query tables in Azion Edge SQL
+POST https://api.azion.com/v4/edge_sql/databases/537/query
+Authorization: Bearer TOKEN
+Content-Type: application/json
+
+{
+  "statements": ["SELECT name FROM sqlite_master WHERE type='table'"]
+}
+
+### Query table waf_counting_blocking in Azion Edge SQL
+POST https://api.azion.com/v4/edge_sql/databases/537/query
+Authorization: Bearer TOKEN
+Content-Type: application/json
+
+{
+  "statements": ["SELECT * FROM static_nonhit LIMIT 1"]
+}
+
+

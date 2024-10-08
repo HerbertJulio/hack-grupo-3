@@ -36,18 +36,6 @@ export const getAzionDatabaseDocuments = async (
     } catch (error) {
       throw error;
     }
-
-    // )
-    // );
-
-    // const formattedPrompts = results
-    //   .map(
-    //     ({ title, data, description }) =>
-    //       `${title}:\n${description}\n${JSON.stringify(data, null, 2)}`
-    //   )
-    //   .join("\n\n");
-
-    return db;
   } catch (error: any) {
     console.error(`Failed to fetch database ${dbName}:`, error);
     throw error;

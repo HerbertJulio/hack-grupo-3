@@ -3,7 +3,12 @@ POST http://localhost:3333/ai
 Content-Type: application/json
 
 {
-  "prompt": "top 5 client that had the biggest traffic raise from the last 3 months"
+  "messages": [
+    { 
+      "content": "top 5 client that had the biggest traffic raise from the last 3 months",
+      "role": "user"
+    }
+  ]
 }
 
 ### Query list of databases in Azion Edge SQL
@@ -21,12 +26,12 @@ Content-Type: application/json
 }
 
 ### Query table waf_counting_blocking in Azion Edge SQL
-POST https://api.azion.com/v4/edge_sql/databases/537/query
-Authorization: Bearer TOKEN
+POST https://api.azion.com/v4/edge_sql/databases/519/query
+Authorization: Bearer azionaafa8bf3128af8c126d99b4380721bb5bf9
 Content-Type: application/json
 
 {
-  "statements": ["SELECT * FROM static_nonhit LIMIT 1"]
+  "statements": ["SELECT * FROM documents LIMIT 1"]
 }
 
 

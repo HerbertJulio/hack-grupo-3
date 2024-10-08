@@ -7,13 +7,13 @@ Instructions: Synthesize your analysis into a report that emphasizes the critica
 `;
 export const queriesSQL = {
   edgeCachingUsage: {
-    query: "SELECT * FROM edge_caching_usage limit 10",
+    query: "SELECT * FROM edge_caching_usage",
     description:
       "Analyze the usage and reserved_capacity metrics for each client_id. Identify clients with low usage relative to their reserved capacity, indicating underutilization.",
     title: "Edge Caching Usage",
   },
   statusCode500: {
-    query: "SELECT * FROM status_code_500 limit 10",
+    query: "SELECT * FROM status_code_500",
     description:
       "Examine the occurrence of HTTP status code 500 errors for each client_id. Determine if there are specific clients experiencing a high number of errors over time, which could signal technical issues affecting their experience.",
     title: "Status Code 500 Errors",

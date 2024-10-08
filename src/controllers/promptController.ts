@@ -10,15 +10,15 @@ class PromptController {
   }
 
   handlePromptRequest = async (c: any) => {
-    const { prompt } = await c.req.json();
+    const { messages } = await c.req.json();
 
-    if (!prompt) {
+    if (!messages.length) {
       return c.json({ error: "Prompt is required" }, 400);
     }
 
     try {
       const responseOpenAI = await this.promptService.streamPromptResponse(
-        prompt
+        messages
       );
       return c.json(responseOpenAI);
     } catch (error) {

@@ -13,21 +13,22 @@ class PromptService {
     });
   }
 
-  async streamPromptResponse(prompt: string) {
+  async streamPromptResponse(messages: any) {
     try {
       const context = await getAzionDatabaseDocuments(this.dbName);
+
+      if (messages.length > 1) {
+        messages.shift();
+      }
 
       const openaiStream: any = await this.openai.chat.completions.create({
         model: "gpt-4o",
         messages: [
           {
             role: "system",
-            content: promptDefault,
+            content: `${promptDefault} respond only about this context: ${context}`,
           },
-          {
-            role: "user",
-            content: `${prompt} respond only about this context: ${context}`,
-          },
+          ...messages,
         ],
       });
 
